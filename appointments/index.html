@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en"
+      data-nmhs-preview="appointments-professional-light-v1">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1">
+
+  <meta
+    name="robots"
+    content="noindex,nofollow,noarchive">
+
+  <title>
+    NMHS Appointments — Professional Light Preview
+  </title>
+
+  <style>
+    :root {
+      --nmhs-primary: #0A3D62;
+      --nmhs-primary-hover: #072F4C;
+      --nmhs-primary-active: #052439;
+      --nmhs-inverse: #FFFFFF;
+      --nmhs-accent: #F28C28;
+      --surface: #FFFFFF;
+      --background: #F4F4F4;
+      --text: #161616;
+      --muted: #525252;
+      --border: #D6D6D6;
+      --focus: #0F62FE;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    }
+
+    body {
+      line-height: 1.45;
+    }
+
+    .bahmni-appointments {
+      min-height: 100vh;
+      --color-primary-1: #0A3D62;
+    }
+
+    .opd-header-wrapper,
+    .opd-header-wrapper header {
+      background: #0A3D62;
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      min-height: 56px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .28);
+
+      font-size: 12px;
+    }
+
+    .btn-user-info {
+      min-height: 40px;
+      padding: 8px 14px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, .28);
+
+      background: #0A3D62;
+      color: #FFFFFF;
+    }
+
+    .btn-user-info:hover,
+    .btn-user-info:focus {
+      background: #072F4C;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    .notice {
+      margin-bottom: 20px;
+      padding: 14px 16px;
+
+      border-left:
+        4px solid
+        var(--nmhs-accent);
+
+      background: var(--surface);
+      color: var(--muted);
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0, 1fr)
+        );
+
+      gap: 18px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 20px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 1px 3px
+        rgba(0, 0, 0, .08);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .button.confirm,
+    button.confirm,
+    .bx--btn--primary:not(:disabled) {
+      min-height: 42px;
+      padding: 10px 18px;
+
+      border: 1px solid #0A3D62;
+
+      background-color:
+        #0A3D62;
+
+      background-image:
+        linear-gradient(
+          135deg,
+          #0A3D62 0%,
+          #072F4C 100%
+        );
+
+      color: #FFFFFF;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .button.confirm:hover,
+    button.confirm:hover,
+    .bx--btn--primary:not(:disabled):hover {
+      border-color: #072F4C;
+
+      background-color:
+        #072F4C;
+
+      background-image:
+        linear-gradient(
+          135deg,
+          #072F4C 0%,
+          #052439 100%
+        );
+
+      color: #FFFFFF;
+      opacity: 1;
+    }
+
+    .button.confirm:active,
+    button.confirm:active,
+    .bx--btn--primary:not(:disabled):active {
+      border-color: #052439;
+
+      background-color:
+        #052439;
+
+      background-image: none;
+    }
+
+    button:focus-visible,
+    input:focus-visible {
+      outline:
+        2px solid
+        var(--focus);
+
+      outline-offset: 2px;
+    }
+
+    .secondary {
+      min-height: 42px;
+      padding: 10px 18px;
+
+      border:
+        1px solid
+        #8D8D8D;
+
+      background: #FFFFFF;
+      color: #161616;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      min-height: 42px;
+
+      padding:
+        9px 10px;
+
+      border:
+        1px solid
+        #8D8D8D;
+
+      background: #FFFFFF;
+      color: #161616;
+    }
+
+    .scope-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .scope-list li + li {
+      margin-top: 7px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      padding: 12px 0;
+      color: #6F6F6F;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-top: 18px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .header-inner {
+        min-height: 52px;
+        padding: 7px 12px;
+      }
+
+      .brand-mark {
+        display: none;
+      }
+
+      main {
+        padding: 12px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .actions {
+        align-items: stretch;
+      }
+
+      .actions button {
+        width: 100%;
+      }
+    }
+
+    @media (forced-colors: active) {
+      .button.confirm,
+      button.confirm,
+      .bx--btn--primary:not(:disabled) {
+        background-image: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bahmni-appointments">
+
+    <div class="opd-header-wrapper">
+      <header>
+        <div class="header-inner">
+
+          <div class="brand">
+            <span class="brand-mark">
+              NMHS
+            </span>
+
+            <span>
+              NMHS Hospital EMR · Appointments
+            </span>
+          </div>
+
+          <button
+            class="btn-user-info"
+            type="button">
+            User menu
+          </button>
+
+        </div>
+      </header>
+    </div>
+
+    <main>
+
+      <div class="notice">
+        <strong>
+          Public sanitized visual preview
+        </strong>
+
+        This specimen shows the accepted
+        NMHS Professional Light presentation
+        mapping for Standalone Appointments.
+
+        It contains no patient data,
+        credentials, backend URLs,
+        OpenMRS configuration,
+        runtime configuration,
+        or compiled private application bundle.
+
+        It is representative,
+        not the authenticated Appointments route.
+      </div>
+
+      <div class="grid">
+
+        <section class="card">
+          <h2>
+            Legacy Angular primary action
+          </h2>
+
+          <p>
+            Existing Bahmni confirm actions
+            receive the NMHS institutional
+            gradient while preserving the
+            application's operational semantics.
+          </p>
+
+          <div class="actions">
+            <button
+              class="button confirm"
+              type="button">
+              Book appointment
+            </button>
+
+            <button
+              class="secondary"
+              type="button">
+              Cancel
+            </button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>
+            React / Carbon primary action
+          </h2>
+
+          <p>
+            The same visual intent is mapped
+            through the application's native
+            Carbon generation rather than
+            replacing Carbon.
+          </p>
+
+          <div class="actions">
+            <button
+              class="bx--btn--primary"
+              type="button">
+              Confirm slot
+            </button>
+
+            <button
+              class="secondary"
+              type="button">
+              Back
+            </button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>
+            Typical appointment controls
+          </h2>
+
+          <div class="field">
+            <label for="patient">
+              Patient
+            </label>
+
+            <input
+              id="patient"
+              value="Example Patient"
+              readonly>
+          </div>
+
+          <div class="field">
+            <label for="service">
+              Service
+            </label>
+
+            <input
+              id="service"
+              value="General consultation"
+              readonly>
+          </div>
+
+          <div class="actions">
+            <button
+              class="button confirm"
+              type="button">
+              Search
+            </button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>
+            Current accepted scope
+          </h2>
+
+          <ul class="scope-list">
+            <li>
+              NMHS institutional header:
+              <strong>#0A3D62</strong>.
+            </li>
+
+            <li>
+              Primary actions use the NMHS
+              blue gradient with hover and
+              active states.
+            </li>
+
+            <li>
+              Responsive specimen layout for
+              desktop, tablet and phone widths.
+            </li>
+
+            <li>
+              Appointment-status colours remain
+              upstream-owned and unchanged.
+            </li>
+
+            <li>
+              Focus/link semantics remain native
+              to the application and Carbon.
+            </li>
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="footer">
+        UX-004A · Representative visual review only ·
+        Integrated authenticated runtime gate remains pending ·
+        Production NO-GO
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
